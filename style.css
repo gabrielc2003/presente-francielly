@@ -10,7 +10,7 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh; /* Garante que o site ocupe toda a altura da tela */
-    overflow: hidden; /* Evita a barra de rolagem */
+    overflow-y: auto; /* Evita a barra de rolagem */
 }
 
 .container {
