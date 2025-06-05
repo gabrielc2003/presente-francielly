@@ -1,0 +1,151 @@
+/* Estilos gerais */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1b0707; /* Fundo escuro */
+    color: #ffffff; /* Texto branco */
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Garante que o site ocupe toda a altura da tela */
+    overflow: hidden; /* Evita a barra de rolagem */
+}
+
+.container {
+    background-color: #1b0707; /* Fundo do container */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Sombra */
+    width: 90%; /* Ocupa 90% da largura da tela */
+    max-width: 600px; /* Limita a largura máxima */
+    position: relative; /* Para garantir que o conteúdo fique acima dos corações */
+    z-index: 1; /* Coloca o container acima dos corações */
+}
+
+h1 {
+    color: #e74c3c; /* Cor do título */
+    font-size: 2em; /* Tamanho do título */
+}
+
+.highlight {
+    color: #2ecc71; /* Cor destacada para o nome Stella */
+    font-weight: bold;
+}
+
+p {
+    font-size: 1em; /* Tamanho do texto */
+    margin: 10px 0;
+}
+
+audio {
+    width: 100%; /* Ocupa a largura total do container */
+    max-width: 300px; /* Limita o tamanho máximo */
+    margin-top: 20px;
+}
+
+/* Container das fotos com mensagens */
+.image-container {
+    display: flex;
+    flex-direction: column; /* Coloca as fotos em uma coluna */
+    align-items: center; /* Centraliza as fotos */
+    margin-top: 20px;
+    max-height: 60vh; /* Limita a altura do container */
+    overflow-y: auto; /* Adiciona rolagem vertical, se necessário */
+}
+
+/* Estilo para cada foto com mensagem */
+.photo-with-message {
+    display: flex;
+    align-items: center; /* Alinha a foto e a mensagem verticalmente */
+    margin: 5px 0; /* Espaço entre as fotos */
+}
+
+/* Estilo das fotos */
+.photo {
+    width: 150px; /* Tamanho das fotos */
+    height: auto;
+    border-radius: 10px;
+    border: 3px solid #555555; /* Borda mais elegante */
+    margin-right: 20px; /* Espaço entre a foto e a mensagem */
+    transition: transform 0.3s ease; /* Efeito de hover */
+}
+
+.photo:hover {
+    transform: scale(1.05); /* Aumenta a foto ao passar o mouse */
+}
+
+/* Estilo das mensagens */
+.photo-message {
+    font-size: 1.2em;
+    color: #ffffff; /* Cor do texto */
+    max-width: 200px; /* Largura máxima da mensagem */
+}
+
+/* Ajustes para telas menores (celulares) */
+@media (max-width: 600px) {
+    .photo {
+        width: 120px; /* Reduz o tamanho das fotos */
+        margin-right: 10px; /* Reduz o espaço entre a foto e a mensagem */
+    }
+
+    .photo-message {
+        font-size: 1em; /* Reduz o tamanho do texto */
+        max-width: 150px; /* Reduz a largura máxima da mensagem */
+    }
+}
+
+/* Container dos corações */
+#hearts-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Permite clicar através dos corações */
+    z-index: 9999; /* Coloca os corações acima de tudo */
+    overflow: hidden; /* Evita que os corações ultrapassem a tela */
+}
+
+/* Estilo dos corações */
+.heart {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #ff4d4d; /* Cor do coração */
+    transform: rotate(-45deg); /* Rotaciona o quadrado para formar um coração */
+    animation: float 5s infinite; /* Animação de flutuação */
+}
+
+.heart::before,
+.heart::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #ff4d4d; /* Cor do coração */
+    border-radius: 50%; /* Forma de círculo */
+}
+
+.heart::before {
+    top: -10px;
+    left: 0;
+}
+
+.heart::after {
+    top: 0;
+    left: 10px;
+}
+
+/* Animação de flutuação */
+@keyframes float {
+    0% {
+        transform: translateY(100vh) rotate(-45deg); /* Começa no fundo da tela */
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100vh) rotate(-45deg); /* Sobe até o topo da tela */
+        opacity: 0;
+    }
+}
