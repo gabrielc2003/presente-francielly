@@ -83,6 +83,26 @@ audio {
     max-width: 200px; /* Largura máxima da mensagem */
 }
 
+.btn{
+    margin-top: 20px;
+    text-decoration: none; /* tira o sublinhado */
+    color: white; /* cor do texto */
+    background-color: #ff4d4d; /* cor do botão */
+    padding: 10px 20px;
+    border-radius: 30px;
+    border: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn:hover{
+
+    background-color: #2ecc71;;
+   
+}
+
 /* Ajustes para telas menores (celulares) */
 @media (max-width: 600px) {
     .photo {
